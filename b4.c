@@ -21,12 +21,12 @@ int main(void)
     // Bash to record audio indefinitely until proccess is killed
     strcpy( startRecording, "arecord -D plughw:1 -f cd -vv test.wav &" );
     // Killall does not work while arecord proccess is happening...
-    strcpy( stopRecording, "killall -KILL arecord" );
+    strcpy( stopRecording, "killall -KILL arecord && aplay -D plughw:1 test.wav" );
     // We can play audio or upload file once recording stopped && aplay -D plug:hw1 test.wav
 
     printf("Blinker is running! Press CTRL+C to quit.\n");
 
-    // Loop (while(1)):
+    // Loop
     while(1)
     {
         if (!digitalRead(butPin)) {
@@ -38,9 +38,11 @@ int main(void)
             digitalWrite(ledPin, LOW);
             printf("LED OFF.\n");
             system(stopRecording);
+            // todo: upload file
           } else {
             digitalWrite(ledPin, HIGH);
             printf("LED ON.\n");
+            // todo: stopPlayback
             system(startRecording);
 
           }
