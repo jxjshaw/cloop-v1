@@ -6,6 +6,6 @@ first pass, record audio when engaged
 - [alsa/arecord](https://linux.die.net/man/1/arecord)
 
 # setup
-- LED pin - Broadcom '#23'
-- BTN pin - '#17'
+- LED pin - broadcom - '#23'
+- BTN pin - broadcom - '#17'
 
