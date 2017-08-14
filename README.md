@@ -1,2 +1,11 @@
 # cloop-v1
-first pass
+first pass, record audio when engaged
+
+# dependencies
+- [WiringPi](http://wiringpi.com/)
+- [alsa/arecord](https://linux.die.net/man/1/arecord)
+
+# setup
+- LED pin - Broadcom '#23'
+- BTN pin - '#17'
+
