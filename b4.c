@@ -19,9 +19,9 @@ int main(void)
     pullUpDnControl(butPin, PUD_UP); // Enable pull-up resistor on button
 
     // Bash to record audio indefinitely until proccess is killed
-    strcpy( startRecording, "touch startRecording.c && arecord -D plughw:1 -f cd -vv test.wav" );
+    strcpy( startRecording, "arecord -D plughw:1 -f cd -vv test.wav &" );
     // Killall does not work while arecord proccess is happening...
-    strcpy( stopRecording, "touch killproccess.c && killall -KILL arecord" );
+    strcpy( stopRecording, "killall -KILL arecord" );
     // We can play audio or upload file once recording stopped && aplay -D plug:hw1 test.wav
 
     printf("Blinker is running! Press CTRL+C to quit.\n");
